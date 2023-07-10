@@ -2,7 +2,7 @@ package com.mounahtech.productservice;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mounahtech.productservice.dto.ProductRequest;
-import com.mounahtech.productservice.model.Product;
+import com.mounahtech.productservice.dto.ProductResponse;
 import com.mounahtech.productservice.repository.ProductRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,14 +64,13 @@ class ProductServiceApplicationIT {
 
     @Test
     void shouldGetAllProducts() throws Exception {
-        Product product = Product.builder()
-                .id("643e603f60b551323509092a")
+        ProductResponse productResponse = ProductResponse.builder()
+                .id("64abdff66048b552d02be46b")
                 .name("Iphone 14")
                 .description("Iphone 14")
                 .price(BigDecimal.valueOf(1800))
                 .build();
-
-        List<Product> products = new ArrayList<>(Collections.singletonList(product));
+        List<ProductResponse> products = new ArrayList<>(Collections.singletonList(productResponse));
 
         String contentOfAllProducts = objectMapper.writeValueAsString(products);
 
@@ -86,8 +85,8 @@ class ProductServiceApplicationIT {
 
     private ProductRequest getProductRequest() {
         return ProductRequest.builder()
-                .name("Iphone 13")
-                .description("Iphone 13")
+                .name("Iphone 14")
+                .description("Iphone 14")
                 .price(BigDecimal.valueOf(1200))
                 .build();
     }
