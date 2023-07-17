@@ -51,7 +51,7 @@ services:
     volumes:
       - ./mongo-data:/data/db
 
-      ## Keycloak Config with Mysql database
+  ## Keycloak Config with Mysql database
   keycloak-mysql:
     container_name: keycloak-mysql
     image: mysql:8.0.30

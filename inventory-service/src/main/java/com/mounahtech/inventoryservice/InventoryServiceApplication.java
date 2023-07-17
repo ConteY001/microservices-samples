@@ -20,13 +20,13 @@ public class InventoryServiceApplication {
     public CommandLineRunner loadData(InventoryRepository inventoryRepository) {
         return args -> {
             Inventory inventory = Inventory.builder()
-                    .skuCode("Iphone_13")
+                    .skuCode("Iphone_14")
                     .quantity(100)
                     .build();
             inventoryRepository.save(inventory);
 
             Inventory inventory1 = Inventory.builder()
-                    .skuCode("Iphone_13_red")
+                    .skuCode("Iphone_14_red")
                     .quantity(0)
                     .build();
             inventoryRepository.save(inventory1);
